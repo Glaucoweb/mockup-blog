@@ -1,0 +1,405 @@
+@import 
+"compass/reset",
+"compass/css3";
+
+@import 
+"sprites",
+"variables",
+"placeholders",
+"type",
+"grid",
+"button",
+"fonts";
+
+.bg-blur{
+	position: fixed;
+	left: 0;
+	right: 0;
+	z-index: -1;
+	width: 100%;
+	height: 100%;
+
+/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#ffffff+0,ffffff+100&0.2+0,0.2+100 */
+	background:
+		-webkit-linear-gradient(top, rgba(255,255,255,0.2) 0%,rgba(255,255,255,0.2) 100%), /* Chrome10+,Safari5.1+ */
+		// -moz-linear-gradient(top, rgba(255,255,255,0.2) 0%,rgba(255,255,255,0.2) 100%), /* Mozilla */
+		// -o-linear-gradient(top, rgba(255,255,255,0.2) 0%,rgba(255,255,255,0.2) 100%), /* Opera */
+		-webkit-linear-gradient(top, rgba(255,255,255,0.6) 0%,rgba(255,255,255,0) 100%); /* Chrome10+,Safari5.1+ */
+		// -moz-linear-gradient(top, rgba(255,255,255,0.6) 0%,rgba(255,255,255,0) 100%); /* Mozilla */
+		// -o-linear-gradient(top, rgba(255,255,255,0.6) 0%,rgba(255,255,255,0) 100%); /* Opera */
+
+	background:
+		// -webkit-linear-gradient(top, rgba(255,255,255,0.2) 0%,rgba(255,255,255,0.2) 100%), /* Chrome10+,Safari5.1+ */
+		-moz-linear-gradient(top, rgba(255,255,255,0.2) 0%,rgba(255,255,255,0.2) 100%), /* Mozilla */
+		// -o-linear-gradient(top, rgba(255,255,255,0.2) 0%,rgba(255,255,255,0.2) 100%), /* Opera */
+		// -webkit-linear-gradient(top, rgba(255,255,255,0.6) 0%,rgba(255,255,255,0) 100%); /* Chrome10+,Safari5.1+ */
+		-moz-linear-gradient(top, rgba(255,255,255,0.6) 0%,rgba(255,255,255,0) 100%); /* Mozilla */
+		// -o-linear-gradient(top, rgba(255,255,255,0.6) 0%,rgba(255,255,255,0) 100%); /* Opera */
+
+	background:
+		// -webkit-linear-gradient(top, rgba(255,255,255,0.2) 0%,rgba(255,255,255,0.2) 100%), /* Chrome10+,Safari5.1+ */
+		// -moz-linear-gradient(top, rgba(255,255,255,0.2) 0%,rgba(255,255,255,0.2) 100%), /* Mozilla */
+		-o-linear-gradient(top, rgba(255,255,255,0.2) 0%,rgba(255,255,255,0.2) 100%), /* Opera */
+		// -webkit-linear-gradient(top, rgba(255,255,255,0.6) 0%,rgba(255,255,255,0) 100%), /* Chrome10+,Safari5.1+ */
+		// -moz-linear-gradient(top, rgba(255,255,255,0.6) 0%,rgba(255,255,255,0) 100%); /* Mozilla */
+		-o-linear-gradient(top, rgba(255,255,255,0.6) 0%,rgba(255,255,255,0) 100%); /* Opera */
+
+}
+
+.logotipo{
+	margin: -14px 18px 0 0;
+	@extend %float-left;
+	@extend %text-indent;
+}
+.menu-primary{
+	background: $white;
+	height: 48px;
+	ul{
+		padding-top: 22px;
+		padding-bottom: 12px;
+	}
+	li{
+		@extend %float-left;
+		margin-right: 22px;
+		a{
+			@extend %text-indent;
+			display: inline-block;
+		}
+	}
+}
+
+.form-search{
+	padding: 10px 0;
+    text-align: right;
+    .icons-search{
+    	border: 0;
+    	margin: 0 4px;
+    	text-indent: -9999px;
+    	background-color: $white;
+    }
+    input[type="text"]{
+    	width: 214px;
+		height: 25px;
+    }
+}
+.error{
+	display: none;
+	background: $red;
+	color: $white;
+	padding: 4px;
+	margin-bottom: 2px;
+}
+
+input[type="text"],
+input[type="email"]{
+	background-color: $white;
+	@include border-radius(4px);
+	@include box-shadow(inset 0 0 6px #f1f1f1);
+	padding: 5px 8px;
+	color: $gray;
+	border:2px solid $grayLight;
+}
+input[type="submit"]{
+	cursor: pointer;
+}
+input[type="text"],
+input[type="email"]{
+	&:focus,
+	&:active{
+		@include box-shadow(inset 0 0 6px $graySuperLight);
+		border: 2px solid $graySuperLight;
+	}
+}
+
+
+.icons-slim-360{
+	margin: 20px 0;
+	@extend %text-indent;
+}
+.box-adds{
+	border:3px solid $white;
+	background: $white url('../img/bg-adds.jpg')no-repeat 0 0;
+	height: 84px;
+	margin-top: 10px;
+	padding-right: 16px;
+	text-align: right;
+	p{
+		width: 300px;
+		font-size: 15px;
+		padding: 10px;
+		color: $grayDark;
+		@extend %float-right;
+		@extend %font-arimo;
+		a{
+			display: block;
+			margin-top: 12px;
+			color: $black;
+			@extend %font-arimo;
+			span{
+				display: inline-block;
+				margin-right: 4px;
+			}
+		}
+	}
+}
+
+.menu-secundary{
+	background: $black05;
+	border-top:1px solid $grayLightBorder;
+    border-bottom: 1px solid $grayLightBorder;
+	overflow: hidden;
+    height: 49px;
+	margin-top: 8px;
+	ul{
+		position: absolute;
+	}
+	.active{
+		&:nth-child(1){
+	    	border-top: 4px solid $blue;
+	    	.menu-dropdown{
+	    		display: block;
+	    		z-index: 200;
+	    		@include transition(all linear .3s)
+	    	}
+	    }
+		a{
+			background: $white90;
+		}
+	}
+	li{
+		@extend %float-left;
+		margin: 2px 0 0 0;
+		cursor: pointer;
+	    &:first-child{
+	    	margin-left:0;
+	    }
+	    &:nth-child(1){
+	    	border-top: 4px solid $blue;
+	    }
+	    &:nth-child(2){
+	    	border-top: 4px solid $pink;
+	    }
+	    &:nth-child(3){
+	    	border-top: 4px solid $yellow;
+	    }
+		&:nth-child(4){
+	    	border-top: 4px solid $green;
+	    }
+	    &:nth-child(5){
+	    	border-top: 4px solid $purple;
+	    }
+	    &:nth-child(6){
+	    	border-top: 4px solid $orange;
+	    }
+	    &:nth-child(7){
+	    	border-top: 4px solid $red;
+	    }
+	    &:nth-child(8){
+	    	border-top: 4px solid $blue;
+	    }
+	    &:nth-child(9){
+	    	border-top: 4px solid $purpleLight;
+	    }
+	    &:hover a{
+    		background: $white90;
+    	}
+	    .menu-dropdown{
+	    	background: $white;
+    		position: absolute;
+    		border-bottom:4px solid $blue;
+    		border-top: 1px solid $graySuperLight;
+	    	display: none;
+	    	padding: 20px 0 0;
+    		left: 0;
+    		top: 49px;
+    		.box-menu-article{
+    		    padding-left: 20px;
+    		}
+    		article{
+    			@extend %float-left;
+    			width: 270px;
+    			margin-left: 12px;
+    			&:first-child{
+    				margin-left: 0;
+    			}
+    			.line-tag{
+    				position: relative;
+    				top: 3px;
+    				left: 0;
+    				width: 93px;
+    				height: 7px;
+    				display: block;
+    				background:$blue;
+    			}
+    			figure{
+    				position: relative;
+    				height: 179px;
+    				overflow: hidden;
+    				figcaption{
+    					position: absolute;
+    					background: $white90;
+    					width: 100%;
+    					@extend %font-arimo;
+    					padding: 12px 10px;
+    					z-index: 150;
+    					bottom: 14px;
+    					left: 0;
+    				}
+    			}
+    		}
+    		.box-readmore{
+    			background-color: $graySuperLight;
+    			@extend %float-left;
+    			width: 135px;	
+    			height: 157px;
+    			margin: 16px 10px 0;
+    			a{
+    				width: 135px;
+				    text-align: left;
+				    padding: 10px;
+				    vertical-align: middle;
+				    display: table-cell;
+    				span{
+    					display: block;
+    					margin: 30px auto 40px;
+    				}
+    			}
+    		}
+    		a, figcaption{
+    			color: $grayDark;
+    			font-size: 14px;
+    			@extend %font-arimo;
+    		}
+    		.box-newsletter{
+    			@extend %float-left;
+    			width: 220px;
+    			padding: 15px;
+    			label{
+    				display: block;
+    				font-size: 16px;
+    				color: $grayDark;
+    				margin-bottom: 30px;
+    			}
+    			input[type="text"],
+    			input[type="email"]{
+    				width: 100%;
+    				margin-bottom: 10px;
+    				font-size: 14px;
+    				@extend %font-arimo;
+    			}
+    			a, input[type="submit"]{
+    				@extend %float-right;
+    			}
+    			.error{
+    				width: 100%;
+    			}
+    		}
+	    }
+	}
+	a{
+		@extend %HelveticaNeueLTStd-ThCn;
+		font-size: 27.6px;
+		color: $grayDark;
+		padding: 8px 16px;
+	}
+}
+
+
+.box-article{
+	margin-top: 34px;
+	.line-tag{
+		position: relative;
+		top: 3px;
+		left: 0;
+		width: 93px;
+		height: 7px;
+		display: block;
+		background:$blue;
+	}
+	.line-tag-text{
+		background: $grayDark;
+	    position: absolute;
+	    bottom: 28px;
+	    z-index: 120;
+	    left: 0;
+	    overflow: hidden;
+	    color: $white;
+	    font-size: 20px;
+		@extend %HelveticaNeueLTStd-ThCn;
+	    display: inline-block;
+	    padding:2.5px 8px;
+	}
+	figure{
+		position: relative;
+		overflow: hidden;
+		height: 179px;
+		figcaption{
+			position: absolute;
+			background: $white90;
+			width: 100%;
+			font-size: 15px;
+			@extend %font-arimo;
+			padding: 12px 10px;
+			z-index: 110;
+			bottom: 0;
+			left: 0;
+		}
+	}
+	.number-social{
+		background: $white;
+		position: absolute;
+	    bottom: 28px;
+	    z-index: 120;
+	    right: 0;
+	    height: 25px;
+	    li{
+	    	@extend %float-left;
+	    	margin-left: 4px;
+	    	a{
+	    		font-size: 12px;
+	    		display: inline-block;
+	    		@extend %float-left;
+	    	}
+    		span{
+    			display: inline-block;
+    			padding: 6px 4px;
+				font-size: 12px;
+    		}
+	    }
+	}
+	.article-primary{
+		figure{
+			height: 371px;
+		}
+		figcaption{
+			font-size: 20px;
+		}
+		.line-tag,.line-tag-text{
+			background: $orange;
+		}
+		.number-social, .line-tag-text{
+			bottom: 32px;
+		}
+	}
+	.article-second{
+		margin-bottom: 4px;
+		.line-tag, .line-tag-text{
+			background: $blue;
+		}
+	}
+	.article-third{
+		.line-tag, .line-tag-text{
+			background: $pink;
+		}
+
+	}
+	a{
+		color: $grayDark;
+	}
+}
+
+.footer{
+	background: $white;
+	margin-top: 40px;
+	min-height: 80px;
+}

@@ -1,0 +1,2 @@
+/*! Blog-mockup 2015-08-10 */
+function removeActive(){$(".box-article").click(function(){$(".menu-secundary ul li").hasClass("active")&&$(".menu-secundary ul li").removeClass("active")})}$(document).ready(function(){$("#submit").click(function(){var a=$("#name").val(),b=$("#email").val();(""==a||""==b)&&$(".error").fadeIn()})}),$(".menu-secundary ul li > a").click(function(){return $(this).parent().removeClass("active"),$(this).parent().addClass("active"),removeActive(),!1});

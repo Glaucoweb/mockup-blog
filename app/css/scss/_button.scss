@@ -1,0 +1,30 @@
+.btn{
+  display: block;
+  padding: 6px;
+  font-size: 14px;
+  font-weight: bold;
+  color:$white;
+  @extend %font-arimo;
+  @include border-radius(3px);
+  text-decoration: none;
+  text-align: center;
+  cursor: pointer;
+  background: $gray;
+  border:0;
+}
+
+.btn-submit {
+  width: 74px;
+  height: 29px;
+  position: relative;
+  @include box-shadow(0 3px 3px $graySuperLight );
+  /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#00acec+0,0079a6+100 */
+  background: rgb(0,172,236); /* Old browsers */
+  background: -moz-linear-gradient(top, rgba(0,172,236,1) 0%, rgba(0,121,166,1) 100%); /* FF3.6+ */
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(0,172,236,1)), color-stop(100%,rgba(0,121,166,1))); /* Chrome,Safari4+ */
+  background: -webkit-linear-gradient(top, rgba(0,172,236,1) 0%,rgba(0,121,166,1) 100%); /* Chrome10+,Safari5.1+ */
+  background: -o-linear-gradient(top, rgba(0,172,236,1) 0%,rgba(0,121,166,1) 100%); /* Opera 11.10+ */
+  background: -ms-linear-gradient(top, rgba(0,172,236,1) 0%,rgba(0,121,166,1) 100%); /* IE10+ */
+  background: linear-gradient(to bottom, rgba(0,172,236,1) 0%,rgba(0,121,166,1) 100%); /* W3C */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00acec', endColorstr='#0079a6',GradientType=0 ); /* IE6-9 */
+}
