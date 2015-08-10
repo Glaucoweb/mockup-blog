@@ -11,7 +11,7 @@ $(document).ready(function() {
 
 // Active menu navigation
 $('.menu-secundary ul li > a').click(function() {
-	$(this).parent().removeClass("active");
+	$('.menu-secundary ul li > a').parent().removeClass("active");
 	$(this).parent().addClass("active");
 	removeActive();
 	return false;
